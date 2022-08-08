@@ -1,7 +1,12 @@
+/*
+pada proses registrasi plugin notes--lebih tepatnya pada objek options
+--kita tambahkan properti validator dan beri nilai NotesValidator
+*/
 const Hapi = require('@hapi/hapi');
 // const routes = require('./routes');
 const NotesService = require('./services/inMemory/NotesService')
 const notes = require('./api/notes')
+const NotesValidator = require('./validator/notes')
 
 const init = async () => {
   const notesService = new NotesService();
