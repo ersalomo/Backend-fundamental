@@ -1,6 +1,19 @@
 class NotesHandler {
-  constructor(service){
+  constructor(service) {
     this._service = service
+
+    /*
+    Ketahuilah! Fungsi bind adalah member dari Function.prototype
+    di mana setiap function JavaScript dapat mengakses fungsi ini.
+    Fungsi bind berfungsi untuk mengikat implementasi function agar
+    ia tetap memiliki konteks sesuai nilai yang ditetapkan pada
+    argumen yang diberikan pada fungsi bind tersebut
+    */
+    this.postNoteHandler = this.postNoteHandler.bind(this)
+    this.getNoteByIdHandler = this.getNoteByIdHandler.bind(this)
+    this.getNotesHandler = this.getNotesHandler.bind(this)
+    this.editNotesByIdHandler = this.editNotesByIdHandler.bind(this)
+    this.deleteNotesByIdHandler = this.deleteNotesByIdHandler.bind(this)
   }
 
   postNoteHandler(request, h) {

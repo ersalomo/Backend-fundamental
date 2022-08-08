@@ -1,5 +1,3 @@
-// const { NotesService } = require('/src/services/inMemory/NotesService.js')
-
 const routes = (handler) => [
   {
     method: 'POST',
@@ -27,3 +25,5 @@ const routes = (handler) => [
     handler: handler.putNoteByIdHandler, // updateNoteById
   },
 ]
+
+module.exports = routes
