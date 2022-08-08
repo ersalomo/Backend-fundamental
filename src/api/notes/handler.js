@@ -10,8 +10,8 @@ class NotesHandler {
     argumen yang diberikan pada fungsi bind tersebut
     */
     this.postNoteHandler = this.postNoteHandler.bind(this)
-    this.getNoteByIdHandler = this.getNoteByIdHandler.bind(this)
     this.getNotesHandler = this.getNotesHandler.bind(this)
+    this.getNoteByIdHandler = this.getNoteByIdHandler.bind(this)
     this.editNotesByIdHandler = this.editNotesByIdHandler.bind(this)
     this.deleteNotesByIdHandler = this.deleteNotesByIdHandler.bind(this)
   }
@@ -48,7 +48,7 @@ class NotesHandler {
 
   getNoteByIdHandler(request, h) {
     try {
-      const { id } = request.payload // parms ?
+      const { id } = request.params // parms ?
       const note = this._service.getNoteById(id)
       return {
         status: 'success',
